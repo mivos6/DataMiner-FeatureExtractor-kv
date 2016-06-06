@@ -1,0 +1,68 @@
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\DataMiner-FeatureExtractor-kv.exe.config
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\DataMiner-FeatureExtractor-kv.exe
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\DataMiner-FeatureExtractor-kv.pdb
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner_FeatureExtractor_kv.Form1.resources
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner_FeatureExtractor_kv.Properties.Resources.resources
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner-FeatureExtractor-kv.csproj.GenerateResource.Cache
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner-FeatureExtractor-kv.exe
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner-FeatureExtractor-kv.pdb
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Emgu.CV.UI.dll
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Emgu.CV.UI.GL.dll
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Emgu.CV.World.dll
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\OpenTK.dll
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\OpenTK.GLControl.dll
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\ZedGraph.dll
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Emgu.CV.UI.xml
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Emgu.CV.UI.GL.xml
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Emgu.CV.World.xml
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\OpenTK.xml
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\OpenTK.GLControl.xml
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\ZedGraph.xml
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\de\ZedGraph.resources.dll
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\es\ZedGraph.resources.dll
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\fr\ZedGraph.resources.dll
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\hu\ZedGraph.resources.dll
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\it\ZedGraph.resources.dll
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\ja\ZedGraph.resources.dll
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\pt\ZedGraph.resources.dll
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\ru\ZedGraph.resources.dll
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\sk\ZedGraph.resources.dll
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\sv\ZedGraph.resources.dll
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\tr\ZedGraph.resources.dll
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\zh-cn\ZedGraph.resources.dll
+c:\users\josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\Josip\documents\visual studio 2015\Projects\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner-FeatureExtractor-kv.csprojResolveAssemblyReference.cache
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\DataMiner-FeatureExtractor-kv.exe.config
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner-FeatureExtractor-kv.exe
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner-FeatureExtractor-kv.pdb
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner-FeatureExtractor-kv.csprojResolveAssemblyReference.cache
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner_FeatureExtractor_kv.Form1.resources
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner_FeatureExtractor_kv.Properties.Resources.resources
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner-FeatureExtractor-kv.csproj.GenerateResource.Cache
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\DataMiner-FeatureExtractor-kv.exe
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\DataMiner-FeatureExtractor-kv.pdb
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Emgu.CV.UI.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Emgu.CV.UI.GL.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Emgu.CV.World.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\OpenTK.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\OpenTK.GLControl.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\ZedGraph.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Emgu.CV.UI.xml
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Emgu.CV.UI.GL.xml
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Emgu.CV.World.xml
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\OpenTK.xml
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\OpenTK.GLControl.xml
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\ZedGraph.xml
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\de\ZedGraph.resources.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\es\ZedGraph.resources.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\fr\ZedGraph.resources.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\hu\ZedGraph.resources.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\it\ZedGraph.resources.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\ja\ZedGraph.resources.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\pt\ZedGraph.resources.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\ru\ZedGraph.resources.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\sk\ZedGraph.resources.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\sv\ZedGraph.resources.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\tr\ZedGraph.resources.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\zh-cn\ZedGraph.resources.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\zh-tw\ZedGraph.resources.dll
