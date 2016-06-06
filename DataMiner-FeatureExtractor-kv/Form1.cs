@@ -24,24 +24,47 @@ namespace DataMiner_FeatureExtractor_kv
         string featurePath = "";
         string facesPath = "";
         string haarPath = "";
-        int nThread;
+        int progressIncrement = 0;
 
         public Form1()
         {
-            InitializeComponent();
-            initializeComboBox();
+            InitializeComponent();           
         }
 
-        private void initializeComboBox()
+        private void initializeProgressBar()
         {
-            //Combo box
-            cb_nThreads.Items.AddRange(new object[]
+            int folderCounter = 1, fileCounter = 1;            
+            bool fEndOfDirectory = false, fEndOfAllData = false, firstStartInnerDo = true;
+
+            do
             {
-                "1",
-                "2",
-                "4"
-            });
-            cb_nThreads.SelectedIndex = 0;
+
+                do
+                {                
+                    try
+                    {
+                        fileCounter++;
+                        firstStartInnerDo = false;
+                        progressIncrement++;
+                    }
+                    catch (Exception)
+                    {
+                        fEndOfDirectory = true;
+                        if (firstStartInnerDo)
+                            fEndOfAllData = true;
+                    }
+                }//End of do
+                while (!fEndOfDirectory);
+
+                fileCounter = 1;
+                fEndOfDirectory = false;
+                firstStartInnerDo = true;
+                folderCounter++;
+            }
+            while (!fEndOfAllData);
+
+            //divide by 100
+            progressIncrement /= 100;
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
@@ -80,11 +103,7 @@ namespace DataMiner_FeatureExtractor_kv
             rtb_Log.AppendText("\n");
             rtb_Log.Refresh();
         }//End of LOG
-
-        private void cb_nThreads_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }     
+    
 
         private void btn_Start_Click(object sender, EventArgs e)
         {
@@ -106,29 +125,24 @@ namespace DataMiner_FeatureExtractor_kv
             }
             else
             {
-                if(!int.TryParse(cb_nThreads.SelectedItem.ToString(), out nThread))
-                {
-                    LOG("Error! thread count conversion failed!", true);
-                }
-                else
-                {
-                    getFeatures(fPath, nThread);
-                }           
-                    
+                initializeProgressBar();
+                getFeatures(fPath);                          
             }
            
         }//End of btn_Start
 
 
 
-        private void getFeatures(string path, int nThr)
+        private void getFeatures(string path)
         {
-            LOG("Feature extraction started! \n Thread count: " + nThr, false);
+            LOG("Feature extraction started!", false);
             Bitmap bitmap;
             String bpPath;
             int folderCounter = 1, fileCounter = 1;
             bool fEndOfDirectory = false, fEndOfAllData = false, firstStartInnerDo = true;
+            Timer timer = new Timer();
 
+            timer.Start();
             do
             {
 
@@ -151,6 +165,10 @@ namespace DataMiner_FeatureExtractor_kv
                             getFeatureArray(bitmap, fileCounter.ToString(), folderCounter.ToString());
                             fileCounter++;
                             firstStartInnerDo = false;
+
+                            //Increment progress bar
+                            pb_Progress.Increment(progressIncrement);
+                            pb_Progress.Update();
                         }//End of else
 
                         
@@ -171,7 +189,11 @@ namespace DataMiner_FeatureExtractor_kv
                 folderCounter++;
                 LOG("New folder!\n\t" + folderCounter, false);
             }
-            while (!fEndOfAllData);          
+            while (!fEndOfAllData);
+
+            timer.Stop();
+            LOG("\n\n\tPROGRAM FINISHED!\n", false);
+            LOG("time: \t" + timer.ToString(), false);
 
         }//End of getFeatures
 
@@ -246,7 +268,7 @@ namespace DataMiner_FeatureExtractor_kv
         }
 
 
-        //OVO DORADITI NEGDJE SAM NEŠTO LOGIČKI ZEZNIO!!!!
+        //LBP
         private int[] calculateLBP(Bitmap bmp)
         {
             List<int> LBPfeatures = new List<int>();
@@ -262,7 +284,6 @@ namespace DataMiner_FeatureExtractor_kv
 
                     currentFeature = calculateCurrentLBP(j,i,bmp);
                     //Write to array
-                    //ERROR WAS HERE
                     LBPfeatures.Add(currentFeature);
                 }//End of inner for
 
