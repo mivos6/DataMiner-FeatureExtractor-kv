@@ -35,7 +35,6 @@
             this.btn_fOutput = new System.Windows.Forms.Button();
             this.btn_facesOutput = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.pb_Progress = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // btn_Exit
@@ -107,19 +106,11 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pb_Progress
-            // 
-            this.pb_Progress.Location = new System.Drawing.Point(18, 294);
-            this.pb_Progress.Name = "pb_Progress";
-            this.pb_Progress.Size = new System.Drawing.Size(651, 23);
-            this.pb_Progress.TabIndex = 12;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(681, 496);
-            this.Controls.Add(this.pb_Progress);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_facesOutput);
             this.Controls.Add(this.btn_fOutput);
@@ -143,7 +134,6 @@
         private System.Windows.Forms.Button btn_fOutput;
         private System.Windows.Forms.Button btn_facesOutput;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ProgressBar pb_Progress;
     }
 }
 

@@ -24,47 +24,10 @@ namespace DataMiner_FeatureExtractor_kv
         string featurePath = "";
         string facesPath = "";
         string haarPath = "";
-        int progressIncrement = 0;
 
         public Form1()
         {
             InitializeComponent();           
-        }
-
-        private void initializeProgressBar()
-        {
-            int folderCounter = 1, fileCounter = 1;            
-            bool fEndOfDirectory = false, fEndOfAllData = false, firstStartInnerDo = true;
-
-            do
-            {
-
-                do
-                {                
-                    try
-                    {
-                        fileCounter++;
-                        firstStartInnerDo = false;
-                        progressIncrement++;
-                    }
-                    catch (Exception)
-                    {
-                        fEndOfDirectory = true;
-                        if (firstStartInnerDo)
-                            fEndOfAllData = true;
-                    }
-                }//End of do
-                while (!fEndOfDirectory);
-
-                fileCounter = 1;
-                fEndOfDirectory = false;
-                firstStartInnerDo = true;
-                folderCounter++;
-            }
-            while (!fEndOfAllData);
-
-            //divide by 100
-            progressIncrement /= 100;
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
@@ -125,7 +88,6 @@ namespace DataMiner_FeatureExtractor_kv
             }
             else
             {
-                initializeProgressBar();
                 getFeatures(fPath);                          
             }
            
@@ -167,8 +129,6 @@ namespace DataMiner_FeatureExtractor_kv
                             firstStartInnerDo = false;
 
                             //Increment progress bar
-                            pb_Progress.Increment(progressIncrement);
-                            pb_Progress.Update();
                         }//End of else
 
                         
