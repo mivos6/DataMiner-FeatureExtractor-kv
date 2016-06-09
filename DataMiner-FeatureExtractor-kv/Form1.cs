@@ -25,6 +25,7 @@ namespace DataMiner_FeatureExtractor_kv
         string featurePath = "";
         string facesPath = "";
         string haarPath = "";
+        bool headerDone = false;
 
         public Form1()
         {
@@ -154,7 +155,7 @@ namespace DataMiner_FeatureExtractor_kv
 
             timer.Stop();
             LOG("\n\n\tPROGRAM FINISHED!\n", false);
-            LOG("time: \t" + (timer.ElapsedMilliseconds * 1000).ToString() + " s", false);
+            LOG("time: \t" + (timer.ElapsedMilliseconds / 1000).ToString() + " s", false);
 
         }//End of getFeatures
 
@@ -339,15 +340,29 @@ namespace DataMiner_FeatureExtractor_kv
         private void writeToFile(int[] features, String className)
         {
             String textToWrite = "";
-            
-            for(int i = 0; i < features.Length; i++)
+            String header = "";
+
+            //Header
+            for (int i = 0; i < features.Length; i++)
+            {
+                header +="F" + i.ToString() + "\t";
+            }//End of for
+            header += "Class";
+
+
+            for (int i = 0; i < features.Length; i++)
             {
                 textToWrite += features[i].ToString() + "\t";
             }
             textToWrite += className;
             try
             {
-                System.IO.File.AppendAllText(featurePath + "\\features.txt", textToWrite + Environment.NewLine);
+                if (!headerDone)
+                {
+                    System.IO.File.AppendAllText(featurePath + "\\features.tsv", header + Environment.NewLine);
+                    headerDone = true;
+                }                  
+                System.IO.File.AppendAllText(featurePath + "\\features.tsv", textToWrite + Environment.NewLine);
                 LOG("Feature written", false);
             }
             catch (Exception)
