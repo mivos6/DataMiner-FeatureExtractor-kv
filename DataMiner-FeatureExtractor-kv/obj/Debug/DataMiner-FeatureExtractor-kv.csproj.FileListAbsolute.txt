@@ -100,3 +100,37 @@ C:\Users\Josip\Desktop\Faks\2. semestar\Računarstvo usluga i analiza podataka\R
 C:\Users\Josip\Desktop\Faks\2. semestar\Računarstvo usluga i analiza podataka\RUAP-KV\kv-GIT\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner_FeatureExtractor_kv.Properties.Resources.resources
 C:\Users\Josip\Desktop\Faks\2. semestar\Računarstvo usluga i analiza podataka\RUAP-KV\kv-GIT\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner-FeatureExtractor-kv.csproj.GenerateResource.Cache
 C:\Users\Josip\Desktop\Faks\2. semestar\Računarstvo usluga i analiza podataka\RUAP-KV\kv-GIT\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner-FeatureExtractor-kv.csprojResolveAssemblyReference.cache
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\DataMiner-FeatureExtractor-kv.exe.config
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner-FeatureExtractor-kv.exe
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner-FeatureExtractor-kv.pdb
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\DataMiner-FeatureExtractor-kv.exe
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\DataMiner-FeatureExtractor-kv.pdb
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\Emgu.CV.UI.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\Emgu.CV.UI.GL.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\Emgu.CV.World.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\OpenTK.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\OpenTK.GLControl.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\ZedGraph.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\Emgu.CV.UI.xml
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\Emgu.CV.UI.GL.xml
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\Emgu.CV.World.xml
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\OpenTK.xml
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\OpenTK.GLControl.xml
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\ZedGraph.xml
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\de\ZedGraph.resources.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\es\ZedGraph.resources.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\fr\ZedGraph.resources.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\hu\ZedGraph.resources.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\it\ZedGraph.resources.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\ja\ZedGraph.resources.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\pt\ZedGraph.resources.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\ru\ZedGraph.resources.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\sk\ZedGraph.resources.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\sv\ZedGraph.resources.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\tr\ZedGraph.resources.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner-FeatureExtractor-kv.csprojResolveAssemblyReference.cache
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner_FeatureExtractor_kv.Form1.resources
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner_FeatureExtractor_kv.Properties.Resources.resources
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner-FeatureExtractor-kv.csproj.GenerateResource.Cache

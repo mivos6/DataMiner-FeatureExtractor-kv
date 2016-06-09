@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using System.Diagnostics;
 //Emgu
 using Emgu.Util;
 using Emgu.CV;
@@ -102,7 +103,7 @@ namespace DataMiner_FeatureExtractor_kv
             String bpPath;
             int folderCounter = 1, fileCounter = 1;
             bool fEndOfDirectory = false, fEndOfAllData = false, firstStartInnerDo = true;
-            Timer timer = new Timer();
+            Stopwatch timer = new Stopwatch();
 
             timer.Start();
             do
@@ -153,7 +154,7 @@ namespace DataMiner_FeatureExtractor_kv
 
             timer.Stop();
             LOG("\n\n\tPROGRAM FINISHED!\n", false);
-            LOG("time: \t" + timer.ToString(), false);
+            LOG("time: \t" + (timer.ElapsedMilliseconds * 1000).ToString() + " s", false);
 
         }//End of getFeatures
 
@@ -167,7 +168,7 @@ namespace DataMiner_FeatureExtractor_kv
             CascadeClassifier classifier = new CascadeClassifier(haarPath + "\\haarcascade_frontalface_alt_tree.xml");
             //Detect faces. gray scale, windowing scale factor (closer to 1 for better detection),minimum number of nearest neighbours
             //min and max size in pixels. Start to search with a window of 800 and go down to 100 
-            Rectangle[] rectangles = classifier.DetectMultiScale(grayFrame, 1.4, 0, new Size(15,15), new Size(800,800));
+            Rectangle[] rectangles = classifier.DetectMultiScale(grayFrame, 1.4, 0, new Size(50,50), new Size(800,800));
 
             if (rectangles == null)
             {

@@ -66,6 +66,7 @@ namespace RUAP_KV_.NET
         {
             //Load picture
             Bitmap bmp = new Bitmap(path);
+            label_features.Text = "";
             getFeatureArray(bmp);
 
         }//End of imageAnalysis
@@ -95,35 +96,39 @@ namespace RUAP_KV_.NET
             control_label.ForeColor = Color.Green;
 
             int[] feature;
-            List<int[]> all_features = new List<int[]>();
 
-            for (int counter = 0; counter < rectangles.Length; counter++)
+            double[] avg_features = new double[60];
+
+            int counter = 0;
+            for (counter = 0; counter < rectangles.Length; counter++)
             {
                 //Get LBP BUT FIRST CUT FACE OUT AND RESIZE IMG
-                feature = calculateLBP( CutFaceOut(bmp, rectangles[counter]) );
+                feature = calculateLBP(CutFaceOut(bmp, rectangles[counter]));
 
-                //Save features for all captured faces
-                all_features.Add(feature);
-
-                //Print
-                label_features.Text += "features for image " + counter + ":    ";
-                for (int i = 0; i < feature.Length; i++)
+                for (int i = 0; i < 59; i++)
                 {
-                    if(i == (feature.Length-1) )
-                        label_features.Text += feature[i].ToString();
-                    else
-                        label_features.Text += feature[i].ToString() + ", ";
+                    avg_features[i] += feature[i];
                 }
-                label_features.Text += "<br><br>";
-
             }
 
-            //Print features
+            //Calculate average feature values
+            for(int i = 0; i < 59; i++)
+            {
+                avg_features[i] /= counter;
+                //Print features
+                if (i == 58)
+                    label_features.Text += avg_features[i].ToString();
+                else
+                    label_features.Text += avg_features[i].ToString() + "<br>";
+            }
+            //Add default class
+            avg_features[59] = 0;
+
 
             return true;
         }//End of getFeatureArray
 
-        private Bitmap CutFaceOut(Bitmap srcBitmap, Rectangle section, string FileCounter, string FolderCounter, string RectangleCounter)
+        private Bitmap CutFaceOut(Bitmap srcBitmap, Rectangle section)
         {
             Bitmap bmp = new Bitmap(section.Width, section.Height);
             Graphics g = Graphics.FromImage(bmp);
