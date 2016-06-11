@@ -97,7 +97,7 @@ namespace RUAP_KV_.NET
 
             int[] feature;
 
-            double[] avg_features = new double[60];
+            int[] avg_features = new int[60];
 
             int counter = 0;
             for (counter = 0; counter < rectangles.Length; counter++)
@@ -108,7 +108,7 @@ namespace RUAP_KV_.NET
                 for (int i = 0; i < 59; i++)
                 {
                     avg_features[i] += feature[i];
-                }
+                }                
             }
 
             //Calculate average feature values
@@ -124,6 +124,21 @@ namespace RUAP_KV_.NET
             //Add default class
             avg_features[59] = 0;
 
+            
+            //Classify
+            CallRequestResponseService.ModelRequest.InvokeRequestResponseService(avg_features).Wait();
+            string output = CallRequestResponseService.ModelRequest.Result;
+
+            int c1 = output.Length - 1;
+            while (output[c1] != '"') c1--;
+            int c2 = c1 - 1;
+            while (output[c2] != '"') c2--;
+
+            string predictedClass = output.Substring(c2 + 1, c1 - c2 - 1);
+            //Print
+            label_features.Text += "<br><br>";
+            label_features.Text += predictedClass;
+            
 
             return true;
         }//End of getFeatureArray
@@ -264,4 +279,5 @@ namespace RUAP_KV_.NET
 
 
     }
+
 }
