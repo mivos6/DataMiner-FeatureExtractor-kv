@@ -17,6 +17,7 @@ using Emgu.CV.Structure;
 using Emgu.CV.CvEnum;
 //Acord
 using Accord.Statistics;
+using Accord.Math;
 
 namespace DataMiner_FeatureExtractor_kv
 {
@@ -362,10 +363,26 @@ namespace DataMiner_FeatureExtractor_kv
             var pca = new Accord.Statistics.Analysis.PrincipalComponentAnalysis(sourceMatrix, Accord.Statistics.Analysis.AnalysisMethod.Center);
             // Compute the Principal Component Analysis
             pca.Compute();
-            // Creates a projection considering 4x dimensions
-            double[,] components = pca.Transform(sourceMatrix, 4);
+            //Eigenvalues
+            double[] eigenvalues = pca.Eigenvalues;
+            double[,] eigenvectors = pca.ComponentMatrix;
+            double temp = eigenvalues.Max();
+            double[,] output = new double[1, eigenvalues.Length];
+
+            int maxRow = eigenvalues.IndexOf(temp);
+            for(int i = 0; i < eigenvalues.Length; i++)
+            {
+                output[0, i] = eigenvectors[maxRow, i];
+            }
+            // Creates a projection considering 1x dimensions
+            //double[,] components = pca.Transform(eigenvectors, 1);
             //Write to PCA_features.txt file
-            return components;
+
+            //ZNAČI OVAKO OVO JE NEŠTO SJEBANO JA NEZZ ŠTA TU TREBA ODABRATI HAHA, UGL OVO SU NEKI EIGENVEKTORI I TO SAM ODABRAO TAJ JEDAN RED PO NAJVEČOJ VRIJEDNOSTI IZ
+            //EIGENVALUE SAD JA NEMAM POJMA JEL TO VALJA TAKO, ILI IZABRATI TE EIGEN VALUE-E PA PROBATI UGL RETURN MORA SLATI NAZAD DOUBLE[,] TAKO DA JEDNOSTAVNO JE PRETVORITI
+            //IZ DOUBLE[] U 2D TO EVO OVA MOJA FOR PETLJA IZNAD RADI.... AKO OVO BUDE IMALO SLAB RATE PROBAJ S EIGENVALUES KAO FEATUREIMA, AKO NE TREBAMO PO NETU TRAZIT JOŠ KAKO SE
+            //TO GOVNO KORISTI.... UGL PROBAJ NA 10-20 POLITIČARA OBA DA NE TRAJE DUGO PA DA VIDIMO ŠTA ĆE BITI TJ. AKO TI SE DA
+            return output;
 
         }//End of calculatePCA
 
