@@ -35,6 +35,11 @@
             this.btn_fOutput = new System.Windows.Forms.Button();
             this.btn_facesOutput = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.radio_LBP = new System.Windows.Forms.RadioButton();
+            this.radio_PCA = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_Exit
@@ -106,11 +111,54 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // radio_LBP
+            // 
+            this.radio_LBP.AutoSize = true;
+            this.radio_LBP.Location = new System.Drawing.Point(75, 54);
+            this.radio_LBP.Name = "radio_LBP";
+            this.radio_LBP.Size = new System.Drawing.Size(108, 21);
+            this.radio_LBP.TabIndex = 12;
+            this.radio_LBP.TabStop = true;
+            this.radio_LBP.Text = "Uniform LBP";
+            this.radio_LBP.UseVisualStyleBackColor = true;
+            // 
+            // radio_PCA
+            // 
+            this.radio_PCA.AutoSize = true;
+            this.radio_PCA.Location = new System.Drawing.Point(75, 82);
+            this.radio_PCA.Name = "radio_PCA";
+            this.radio_PCA.Size = new System.Drawing.Size(56, 21);
+            this.radio_PCA.TabIndex = 13;
+            this.radio_PCA.TabStop = true;
+            this.radio_PCA.Text = "PCA";
+            this.radio_PCA.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(177, 17);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Feature extraction method:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.radio_LBP);
+            this.groupBox1.Controls.Add(this.radio_PCA);
+            this.groupBox1.Location = new System.Drawing.Point(305, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(227, 115);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(681, 496);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_facesOutput);
             this.Controls.Add(this.btn_fOutput);
@@ -118,9 +166,14 @@
             this.Controls.Add(this.rtb_Log);
             this.Controls.Add(this.btn_Input);
             this.Controls.Add(this.btn_Exit);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Feature Extraction";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -134,6 +187,10 @@
         private System.Windows.Forms.Button btn_fOutput;
         private System.Windows.Forms.Button btn_facesOutput;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton radio_LBP;
+        private System.Windows.Forms.RadioButton radio_PCA;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

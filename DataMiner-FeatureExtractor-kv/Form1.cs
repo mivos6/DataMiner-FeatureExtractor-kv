@@ -15,6 +15,8 @@ using Emgu.Util;
 using Emgu.CV;
 using Emgu.CV.Structure;
 using Emgu.CV.CvEnum;
+//Acord
+using Accord.Statistics;
 
 namespace DataMiner_FeatureExtractor_kv
 {
@@ -29,7 +31,8 @@ namespace DataMiner_FeatureExtractor_kv
 
         public Form1()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            radio_LBP.Checked = true;    
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
@@ -135,12 +138,13 @@ namespace DataMiner_FeatureExtractor_kv
 
                         
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
                         LOG("Error! Failed to load a picture: " + bpPath, true);
                         fEndOfDirectory = true;
                         if (firstStartInnerDo)
                             fEndOfAllData = true;
+                        LOG("error message: " + e.Message, true);
                     }
                 }//End of do
                 while (!fEndOfDirectory) ;
@@ -179,12 +183,25 @@ namespace DataMiner_FeatureExtractor_kv
             LOG("Face number: " + rectangles.Length.ToString(), false);
 
             int[] feature;
+            double[,] featurePCA;
+            double[] featurePCA_toWrite;
 
-            for(int counter = 0; counter < rectangles.Length; counter++)
+            for (int counter = 0; counter < rectangles.Length; counter++)
             {
-                //Get LBP BUT FIRST CUT FACE OUT AND RESIZE IMG
-                feature = calculateLBP( CutFaceOut(bmp, rectangles[counter], fileCounter, folderCounter, counter.ToString()) );
-                writeToFile(feature, folderCounter);
+                //Get LBP or PCA BUT FIRST CUT FACE OUT AND RESIZE IMG
+                if (radio_LBP.Checked)
+                {
+                    feature = calculateLBP(CutFaceOut(bmp, rectangles[counter], fileCounter, folderCounter, counter.ToString()));
+                    writeToFile(feature, folderCounter);
+                }
+                    
+                else if (radio_PCA.Checked){
+                    featurePCA = calculatePCA(CutFaceOut(bmp, rectangles[counter], fileCounter, folderCounter, counter.ToString()));
+                    LOG("PCA Calculated!", false);
+                    featurePCA_toWrite = Array2DTo1D(featurePCA);
+                    writeToFile(featurePCA_toWrite, folderCounter);
+                }  
+                          
             }
 
             return true;
@@ -335,12 +352,50 @@ namespace DataMiner_FeatureExtractor_kv
             }
             //If counter is greater than 2 return false
             return counter > 2 ? false : true;
-        }
+        }//End of isUniform
+
+
+        //PCA
+        private double[,] calculatePCA(Bitmap bmp)
+        {
+            double[,] sourceMatrix = getSourceMatrix(bmp);
+            var pca = new Accord.Statistics.Analysis.PrincipalComponentAnalysis(sourceMatrix, Accord.Statistics.Analysis.AnalysisMethod.Center);
+            // Compute the Principal Component Analysis
+            pca.Compute();
+            // Creates a projection considering 4x dimensions
+            double[,] components = pca.Transform(sourceMatrix, 4);
+            //Write to PCA_features.txt file
+            return components;
+
+        }//End of calculatePCA
+
+        private double[,] getSourceMatrix(Bitmap bmp)
+        {
+            double[,] matrix = new double[bmp.Height, bmp.Width];
+            for(int i = 0; i < bmp.Height; i++)
+            {
+                for(int j = 0; j < bmp.Width; j++)
+                {
+                    matrix[i, j] = (bmp.GetPixel(i, j).R + bmp.GetPixel(i, j).G + bmp.GetPixel(i, j).B) / 3;
+                }                
+            }
+
+            return matrix;
+        }//End of getSourceMatrix
+
+
+        private double[] Array2DTo1D(double[,] array)
+        {
+            double[] newArray = new double[array.Length];
+            Buffer.BlockCopy(array, 0, newArray, 0, array.Length * sizeof(double) );
+            return newArray;
+        }//End of Array2DTo1D
 
         private void writeToFile(int[] features, String className)
         {
             String textToWrite = "";
             String header = "";
+            String name = "LBP_features.tsv";
 
             //Header
             for (int i = 0; i < features.Length; i++)
@@ -359,10 +414,10 @@ namespace DataMiner_FeatureExtractor_kv
             {
                 if (!headerDone)
                 {
-                    System.IO.File.AppendAllText(featurePath + "\\features.tsv", header + Environment.NewLine);
+                    System.IO.File.AppendAllText(featurePath + "\\" + name, header + Environment.NewLine);
                     headerDone = true;
-                }                  
-                System.IO.File.AppendAllText(featurePath + "\\features.tsv", textToWrite + Environment.NewLine);
+                }
+                System.IO.File.AppendAllText(featurePath + "\\" + name, textToWrite + Environment.NewLine);
                 LOG("Feature written", false);
             }
             catch (Exception)
@@ -370,7 +425,43 @@ namespace DataMiner_FeatureExtractor_kv
                 LOG("Error! Feature writing failed!", true);
             }
             
-        }
+        }//End of writeToFile
+
+        private void writeToFile(double[] features, String className)
+        {
+            String textToWrite = "";
+            String header = "";
+            String name = "PCA_features.tsv";
+
+            //Header
+            for (int i = 0; i < features.Length; i++)
+            {
+                header += "F" + i.ToString() + "\t";
+            }//End of for
+            header += "Class";
+
+
+            for (int i = 0; i < features.Length; i++)
+            {
+                textToWrite += features[i].ToString() + "\t";
+            }
+            textToWrite += className;
+            try
+            {
+                if (!headerDone)
+                {
+                    System.IO.File.AppendAllText(featurePath + "\\" + name, header + Environment.NewLine);
+                    headerDone = true;
+                }
+                System.IO.File.AppendAllText(featurePath + "\\" + name, textToWrite + Environment.NewLine);
+                LOG("Feature written", false);
+            }
+            catch (Exception)
+            {
+                LOG("Error! Feature writing failed!", true);
+            }
+
+        }//End of writeToFile
 
         private void originalPicture_Click(object sender, EventArgs e)
         {

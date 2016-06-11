@@ -134,3 +134,12 @@ C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtracto
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner_FeatureExtractor_kv.Form1.resources
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner_FeatureExtractor_kv.Properties.Resources.resources
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner-FeatureExtractor-kv.csproj.GenerateResource.Cache
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.dll.config
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.MachineLearning.GPL.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.Math.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.Statistics.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.xml
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.MachineLearning.GPL.xml
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.Math.xml
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.Statistics.xml
