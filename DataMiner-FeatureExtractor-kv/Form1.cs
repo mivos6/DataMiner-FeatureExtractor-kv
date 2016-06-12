@@ -28,6 +28,7 @@ namespace DataMiner_FeatureExtractor_kv
         string featurePath = "";
         string facesPath = "";
         string haarPath = "";
+        string tempPath = "";
         bool headerDone = false;
 
         public Form1()
@@ -49,16 +50,36 @@ namespace DataMiner_FeatureExtractor_kv
         private void btn_Input_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog folderDialog = new FolderBrowserDialog();
-            if(folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+
+            if (tempPath.Equals(""))
             {
-                fPath = folderDialog.SelectedPath;
-                LOG("File succesfully opened: \n\t" + fPath, false);
-                //Get features from pictures       
+                if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    fPath = folderDialog.SelectedPath;
+                    tempPath = fPath;
+                    LOG("File succesfully opened: \n\t" + fPath, false);
+                    //Get features from pictures       
+                }
+                else
+                {
+                    LOG("Error opening file", true);
+                }
             }
             else
             {
-                LOG("Error opening file", true);
+                if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    fPath = folderDialog.SelectedPath;
+                    tempPath = fPath;
+                    LOG("File succesfully opened: \n\t" + fPath, false);
+                    //Get features from pictures       
+                }
+                else
+                {
+                    LOG("Error opening file", true);
+                }
             }
+            
         }//End of btn_Input
 
         private void LOG(string msg, Boolean error)
@@ -367,24 +388,42 @@ namespace DataMiner_FeatureExtractor_kv
             double[] eigenvalues = pca.Eigenvalues;
             double[,] eigenvectors = pca.ComponentMatrix;
             double temp = eigenvalues.Max();
-            double[,] output = new double[1, eigenvalues.Length];
+            double[,] output = new double[1, eigenvalues.Length*2];
 
             int maxRow = eigenvalues.IndexOf(temp);
-            for(int i = 0; i < eigenvalues.Length; i++)
+
+            int tempCounter = 0;
+            for(int i = 0; i < eigenvalues.Length*2; i=i+2)
             {
-                output[0, i] = eigenvectors[maxRow, i];
+                //output[0, i] = eigenvectors[maxRow, i];
+                output[0, i] = eigenvalues[tempCounter];
+                output[0, i + 1] = meanValue(eigenvectors, tempCounter, eigenvalues.Length);
+                tempCounter++;
             }
+
+
             // Creates a projection considering 1x dimensions
             //double[,] components = pca.Transform(eigenvectors, 1);
             //Write to PCA_features.txt file
 
-            //ZNAČI OVAKO OVO JE NEŠTO SJEBANO JA NEZZ ŠTA TU TREBA ODABRATI HAHA, UGL OVO SU NEKI EIGENVEKTORI I TO SAM ODABRAO TAJ JEDAN RED PO NAJVEČOJ VRIJEDNOSTI IZ
-            //EIGENVALUE SAD JA NEMAM POJMA JEL TO VALJA TAKO, ILI IZABRATI TE EIGEN VALUE-E PA PROBATI UGL RETURN MORA SLATI NAZAD DOUBLE[,] TAKO DA JEDNOSTAVNO JE PRETVORITI
-            //IZ DOUBLE[] U 2D TO EVO OVA MOJA FOR PETLJA IZNAD RADI.... AKO OVO BUDE IMALO SLAB RATE PROBAJ S EIGENVALUES KAO FEATUREIMA, AKO NE TREBAMO PO NETU TRAZIT JOŠ KAKO SE
-            //TO GOVNO KORISTI.... UGL PROBAJ NA 10-20 POLITIČARA OBA DA NE TRAJE DUGO PA DA VIDIMO ŠTA ĆE BITI TJ. AKO TI SE DA
             return output;
 
         }//End of calculatePCA
+
+        private double meanValue(double[,] vector, int row, int length)
+        {
+            double mean = 0;
+            int i;
+
+
+            for(i = 0; i < length; i++)
+            {
+                mean += vector[row, i];
+            }
+            mean /= i;
+
+            return mean;
+        }//End of meanValue
 
         private double[,] getSourceMatrix(Bitmap bmp)
         {
@@ -500,46 +539,109 @@ namespace DataMiner_FeatureExtractor_kv
         private void btn_fOutput_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog folderDialog = new FolderBrowserDialog();
-            if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+
+            if ( tempPath.Equals("") )
             {
-                featurePath = folderDialog.SelectedPath;
-                LOG("Location succesfully selected: \n\t" + featurePath, false);
-                //Get features from pictures       
+                if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    featurePath = folderDialog.SelectedPath;
+                    tempPath = featurePath;
+                    LOG("Location succesfully selected: \n\t" + featurePath, false);
+                    //Get features from pictures       
+                }
+                else
+                {
+                    LOG("Error selecting location", true);
+                }
             }
             else
             {
-                LOG("Error selecting location", true);
+                folderDialog.SelectedPath = tempPath;
+                if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    featurePath = folderDialog.SelectedPath;
+                    tempPath = featurePath;
+                    LOG("Location succesfully selected: \n\t" + featurePath, false);
+                    //Get features from pictures       
+                }
+                else
+                {
+                    LOG("Error selecting location", true);
+                }
             }
+            
         }
 
         private void btn_facesOutput_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog folderDialog = new FolderBrowserDialog();
-            if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+
+            if (tempPath.Equals(""))
             {
-                facesPath = folderDialog.SelectedPath;
-                LOG("Location succesfully selected: \n\t" + facesPath, false);
-                //Get features from pictures       
+                if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    facesPath = folderDialog.SelectedPath;
+                    tempPath = facesPath;
+                    LOG("Location succesfully selected: \n\t" + facesPath, false);
+                    //Get features from pictures       
+                }
+                else
+                {
+                    LOG("Error selecting location", true);
+                }
             }
             else
             {
-                LOG("Error selecting location", true);
+                folderDialog.SelectedPath = tempPath;
+                if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    facesPath = folderDialog.SelectedPath;
+                    tempPath = facesPath;
+                    LOG("Location succesfully selected: \n\t" + facesPath, false);
+                    //Get features from pictures       
+                }
+                else
+                {
+                    LOG("Error selecting location", true);
+                }
             }
+                
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog folderDialog = new FolderBrowserDialog();
-            if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+
+            if (tempPath.Equals(""))
             {
-                haarPath = folderDialog.SelectedPath;
-                LOG("Location succesfully selected: \n\t" + haarPath, false);
-                //Get features from pictures       
+                if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    haarPath = folderDialog.SelectedPath;
+                    tempPath = haarPath;
+                    LOG("Location succesfully selected: \n\t" + haarPath, false);
+                    //Get features from pictures       
+                }
+                else
+                {
+                    LOG("Error selecting location", true);
+                }
             }
             else
             {
-                LOG("Error selecting location", true);
+                folderDialog.SelectedPath = tempPath;
+                if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    haarPath = folderDialog.SelectedPath;
+                    tempPath = haarPath;
+                    LOG("Location succesfully selected: \n\t" + haarPath, false);
+                    //Get features from pictures       
+                }
+                else
+                {
+                    LOG("Error selecting location", true);
+                }
             }
+            
         }
     }//End of Class
 
