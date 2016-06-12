@@ -388,17 +388,14 @@ namespace DataMiner_FeatureExtractor_kv
             double[] eigenvalues = pca.Eigenvalues;
             double[,] eigenvectors = pca.ComponentMatrix;
             double temp = eigenvalues.Max();
-            double[,] output = new double[1, eigenvalues.Length*2];
+            double[,] output = new double[1, eigenvalues.Length];
 
             int maxRow = eigenvalues.IndexOf(temp);
 
-            int tempCounter = 0;
-            for(int i = 0; i < eigenvalues.Length*2; i=i+2)
+            for(int i = 0; i < eigenvalues.Length; i++)
             {
                 //output[0, i] = eigenvectors[maxRow, i];
-                output[0, i] = eigenvalues[tempCounter];
-                output[0, i + 1] = meanValue(eigenvectors, tempCounter, eigenvalues.Length);
-                tempCounter++;
+                output[0, i] = eigenvalues[i];
             }
 
 
@@ -410,20 +407,6 @@ namespace DataMiner_FeatureExtractor_kv
 
         }//End of calculatePCA
 
-        private double meanValue(double[,] vector, int row, int length)
-        {
-            double mean = 0;
-            int i;
-
-
-            for(i = 0; i < length; i++)
-            {
-                mean += vector[row, i];
-            }
-            mean /= i;
-
-            return mean;
-        }//End of meanValue
 
         private double[,] getSourceMatrix(Bitmap bmp)
         {
