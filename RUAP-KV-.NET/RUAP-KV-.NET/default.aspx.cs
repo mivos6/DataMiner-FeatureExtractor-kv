@@ -97,51 +97,66 @@ namespace RUAP_KV_.NET
 
             int[] feature;
 
-            int[] avg_features = new int[60];
+
+            //get all features here
+            string[] predictedClasses = new string[rectangles.Length];
 
             int counter = 0;
             for (counter = 0; counter < rectangles.Length; counter++)
             {
                 //Get LBP BUT FIRST CUT FACE OUT AND RESIZE IMG
                 feature = calculateLBP(CutFaceOut(bmp, rectangles[counter]));
-
-                for (int i = 0; i < 59; i++)
-                {
-                    avg_features[i] += feature[i];
-                }                
+                
+                //get class for current face
+                CallRequestResponseService.ModelRequest.InvokeRequestResponseService(feature).Wait();
+                predictedClasses[counter] = getClass( CallRequestResponseService.ModelRequest.Result );
+              
             }
+                                
+            //Print
+            label_features.Text += "<br><br>";
+            label_features.Text += "Predicted class: <br>";
+            label_features.Text += findTrueClass(predictedClasses);
 
-            //Calculate average feature values
-            for(int i = 0; i < 59; i++)
-            {
-                avg_features[i] /= counter;
-                //Print features
-                if (i == 58)
-                    label_features.Text += avg_features[i].ToString();
-                else
-                    label_features.Text += avg_features[i].ToString() + "<br>";
-            }
-            //Add default class
-            avg_features[59] = 0;
 
-            
-            //Classify
-            CallRequestResponseService.ModelRequest.InvokeRequestResponseService(avg_features).Wait();
-            string output = CallRequestResponseService.ModelRequest.Result;
+            return true;
+        }//End of getFeatureArray
 
+        private string getClass(string output)
+        {
             int c1 = output.Length - 1;
             while (output[c1] != '"') c1--;
             int c2 = c1 - 1;
             while (output[c2] != '"') c2--;
 
             string predictedClass = output.Substring(c2 + 1, c1 - c2 - 1);
-            //Print
-            label_features.Text += "<br><br>";
-            label_features.Text += predictedClass;
-            
+            return predictedClass;
+        }//End of getClass
 
-            return true;
-        }//End of getFeatureArray
+        private string findTrueClass(String[] classArray)
+        {
+            List<int> classesInvolved = new List<int>();
+            List<int> classesArray = new List<int>();
+            List<int> count = new List<int>();
+            int temp;
+
+            //transfer array to list and get observed classes
+            for (int i = 0; i < classArray.Length; i++)
+            {
+                int.TryParse(classArray[i], out temp);
+                if(classesInvolved.FindAll(x => x==temp).Count == 0)
+                    classesInvolved.Add(temp);
+                classesArray.Add(temp);
+            }
+            //Count results
+            for(int i = 0; i < classesInvolved.Count; i++)
+            {
+                count.Add(classesArray.FindAll(x=> x == classesInvolved[i] ).Count );
+            }
+            int max = count.Max();
+            //Return class
+            return classesInvolved[max].ToString();
+        }//End of findTrueClass
 
         private Bitmap CutFaceOut(Bitmap srcBitmap, Rectangle section)
         {
@@ -214,6 +229,8 @@ namespace RUAP_KV_.NET
             uniformLBPfeatures.Add(nuc);
 
             //Convert List<int> to int[] and return it
+            //Add class 0
+            uniformLBPfeatures.Add(0);
             return uniformLBPfeatures.ToArray();
         }//End of calculateLBP
 

@@ -137,3 +137,7 @@ D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\RUAP-KV-.
 D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\RUAP-KV-.NET\RUAP-KV-.NET\bin\System.Net.Http.Formatting.dll
 D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\RUAP-KV-.NET\RUAP-KV-.NET\bin\Newtonsoft.Json.xml
 D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\RUAP-KV-.NET\RUAP-KV-.NET\bin\System.Net.Http.Formatting.xml
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\Newtonsoft.Json.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\System.Net.Http.Formatting.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\Newtonsoft.Json.xml
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\System.Net.Http.Formatting.xml
