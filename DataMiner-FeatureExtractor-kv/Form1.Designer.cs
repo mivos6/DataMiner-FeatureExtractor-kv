@@ -40,6 +40,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cb_LBPandPCA = new System.Windows.Forms.CheckBox();
+            this.lbl_NoFace = new System.Windows.Forms.Label();
+            this.lbl_numNoFaces = new System.Windows.Forms.Label();
+            this.btn_Details = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -165,11 +168,42 @@
             this.cb_LBPandPCA.UseVisualStyleBackColor = true;
             this.cb_LBPandPCA.CheckedChanged += new System.EventHandler(this.cb_LBPandPCA_CheckedChanged);
             // 
+            // lbl_NoFace
+            // 
+            this.lbl_NoFace.AutoSize = true;
+            this.lbl_NoFace.Location = new System.Drawing.Point(569, 20);
+            this.lbl_NoFace.Name = "lbl_NoFace";
+            this.lbl_NoFace.Size = new System.Drawing.Size(68, 17);
+            this.lbl_NoFace.TabIndex = 17;
+            this.lbl_NoFace.Text = "No faces:";
+            // 
+            // lbl_numNoFaces
+            // 
+            this.lbl_numNoFaces.AutoSize = true;
+            this.lbl_numNoFaces.Location = new System.Drawing.Point(643, 20);
+            this.lbl_numNoFaces.Name = "lbl_numNoFaces";
+            this.lbl_numNoFaces.Size = new System.Drawing.Size(16, 17);
+            this.lbl_numNoFaces.TabIndex = 18;
+            this.lbl_numNoFaces.Text = "0";
+            // 
+            // btn_Details
+            // 
+            this.btn_Details.Location = new System.Drawing.Point(572, 50);
+            this.btn_Details.Name = "btn_Details";
+            this.btn_Details.Size = new System.Drawing.Size(87, 23);
+            this.btn_Details.TabIndex = 19;
+            this.btn_Details.Text = "Details";
+            this.btn_Details.UseVisualStyleBackColor = true;
+            this.btn_Details.Click += new System.EventHandler(this.btn_Details_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(681, 496);
+            this.Controls.Add(this.btn_Details);
+            this.Controls.Add(this.lbl_numNoFaces);
+            this.Controls.Add(this.lbl_NoFace);
             this.Controls.Add(this.cb_LBPandPCA);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
@@ -206,6 +240,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox cb_LBPandPCA;
+        private System.Windows.Forms.Label lbl_NoFace;
+        private System.Windows.Forms.Label lbl_numNoFaces;
+        private System.Windows.Forms.Button btn_Details;
     }
 }
 

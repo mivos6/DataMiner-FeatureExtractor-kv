@@ -18,6 +18,7 @@ using Emgu.CV.CvEnum;
 //Acord
 using Accord.Statistics;
 using Accord.Math;
+using System.Threading;
 
 namespace DataMiner_FeatureExtractor_kv
 {
@@ -30,11 +31,15 @@ namespace DataMiner_FeatureExtractor_kv
         string haarPath = "";
         string tempPath = "";
         bool headerDone = false;
+        int noFacesCounter = 0;
+        public static List<String> noFacesError = new List<string>();
+        public static string facesPathForm2 = "";
 
         public Form1()
         {
             InitializeComponent();
-            radio_LBP.Checked = true;    
+            radio_LBP.Checked = true;
+            btn_Details.Enabled = false;
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
@@ -58,6 +63,8 @@ namespace DataMiner_FeatureExtractor_kv
                     fPath = folderDialog.SelectedPath;
                     tempPath = fPath;
                     LOG("File succesfully opened: \n\t" + fPath, false);
+
+                    facesPathForm2 = fPath;
                     //Get features from pictures       
                 }
                 else
@@ -72,6 +79,7 @@ namespace DataMiner_FeatureExtractor_kv
                     fPath = folderDialog.SelectedPath;
                     tempPath = fPath;
                     LOG("File succesfully opened: \n\t" + fPath, false);
+                    facesPathForm2 = fPath;
                     //Get features from pictures       
                 }
                 else
@@ -115,15 +123,16 @@ namespace DataMiner_FeatureExtractor_kv
             }
             else
             {
-                getFeatures(fPath);                          
+                getFeatures(fPath);                                         
             }
            
         }//End of btn_Start
 
 
 
-        private void getFeatures(string path)
+        private void getFeatures(object value)
         {
+            String path = (string) value;
             LOG("Feature extraction started!", false);
             Bitmap bitmap;
             String bpPath;
@@ -183,6 +192,8 @@ namespace DataMiner_FeatureExtractor_kv
             LOG("\n\n\tPROGRAM FINISHED!\n", false);
             LOG("time: \t" + (timer.ElapsedMilliseconds / 1000).ToString() + " s", false);
 
+            btn_Details.Enabled = true;
+
         }//End of getFeatures
 
         private bool getFeatureArray(Bitmap bmp, string fileCounter, string folderCounter)
@@ -199,7 +210,11 @@ namespace DataMiner_FeatureExtractor_kv
 
             if (rectangles.Length == 0)
             {
-                LOG("No face!", true);
+                LOG("No face on picture: " + folderCounter.ToString() + "\\" + fileCounter.ToString() + ".jpg", true);
+                noFacesCounter++;
+                lbl_numNoFaces.Text = noFacesCounter.ToString();
+
+                noFacesError.Add(folderCounter.ToString() + @"\" + fileCounter.ToString() + ".jpg");
                 return false;
             }
             LOG("Face number: " + rectangles.Length.ToString(), false);
@@ -658,7 +673,6 @@ namespace DataMiner_FeatureExtractor_kv
                     facesPath = folderDialog.SelectedPath;
                     tempPath = facesPath;
                     LOG("Location succesfully selected: \n\t" + facesPath, false);
-                    //Get features from pictures       
                 }
                 else
                 {
@@ -673,7 +687,6 @@ namespace DataMiner_FeatureExtractor_kv
                     facesPath = folderDialog.SelectedPath;
                     tempPath = facesPath;
                     LOG("Location succesfully selected: \n\t" + facesPath, false);
-                    //Get features from pictures       
                 }
                 else
                 {
@@ -732,6 +745,19 @@ namespace DataMiner_FeatureExtractor_kv
                 radio_PCA.Enabled = true;
             }
 
+        }
+
+        private void btn_Details_Click(object sender, EventArgs e)
+        {
+            if(noFacesError.Any())
+            {
+                Form2 form = new Form2();
+                form.Show();
+            }
+            else
+            {
+                MessageBox.Show("List empty!");
+            }
         }
     }//End of Class
 
