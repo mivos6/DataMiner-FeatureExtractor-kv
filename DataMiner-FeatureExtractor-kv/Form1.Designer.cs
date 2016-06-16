@@ -153,7 +153,7 @@
             this.groupBox1.Controls.Add(this.radio_PCA);
             this.groupBox1.Location = new System.Drawing.Point(305, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(227, 115);
+            this.groupBox1.Size = new System.Drawing.Size(227, 114);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             // 

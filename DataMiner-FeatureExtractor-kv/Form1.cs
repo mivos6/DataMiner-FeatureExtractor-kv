@@ -202,11 +202,16 @@ namespace DataMiner_FeatureExtractor_kv
             //Convert to gray scale
             Image<Gray, byte> grayFrame = ImageFrame.Convert<Gray, byte>();
 
-            //Classifier
+            //Classifiers
             CascadeClassifier classifier = new CascadeClassifier(haarPath + "\\haarcascade_frontalface_alt_tree.xml");
+            //CascadeClassifier nose = new CascadeClassifier(haarPath + "\\Nose.xml");
+            //CascadeClassifier mouth = new CascadeClassifier(haarPath + "\\Mouth.xml");
+            //CascadeClassifier leftEye = new CascadeClassifier(haarPath + "\\leftEye.xml");
+            //CascadeClassifier rightEye = new CascadeClassifier(haarPath + "\\rightEye.xml");
             //Detect faces. gray scale, windowing scale factor (closer to 1 for better detection),minimum number of nearest neighbours
             //min and max size in pixels. Start to search with a window of 800 and go down to 100 
             Rectangle[] rectangles = classifier.DetectMultiScale(grayFrame, 1.4, 0, new Size(15,15), new Size(800,800));
+
 
             if (rectangles.Length == 0)
             {
@@ -236,6 +241,8 @@ namespace DataMiner_FeatureExtractor_kv
                 //LBP
                 Bitmap face = CutFaceOut(bmp, rectangles[0], fileCounter, folderCounter, "0");
                 Bitmap[] segments = makeSegments(face);
+
+
                 for (int i = 0; i < segments.Length; i++)
                 {
                     //Save segment
@@ -255,6 +262,7 @@ namespace DataMiner_FeatureExtractor_kv
                 }
 
                 writeToFile(LBP_PCA.ToArray(), folderCounter);
+
             }//End of if
 
 
@@ -276,14 +284,7 @@ namespace DataMiner_FeatureExtractor_kv
                 }
                 writeToFile(feature, folderCounter);
             }
-                    
-            else if (radio_PCA.Checked){
-                featurePCA = calculatePCA(CutFaceOut(bmp, rectangles[0], fileCounter, folderCounter, "0"));
-                LOG("PCA Calculated!", false);
-                featurePCA_toWrite = Array2DTo1D(featurePCA);
-                writeToFile(featurePCA_toWrite, folderCounter);
-            }  
-
+                            
             return true;
         }
 

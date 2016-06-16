@@ -40,13 +40,13 @@ namespace CallRequestResponseService
             InvokeRequestResponseService().Wait();
         }*/
 
-        public static async Task InvokeRequestResponseService(int[] features)
+        public static async Task InvokeRequestResponseService(double[] features)
         {
             using (var client = new HttpClient())
             {
                 string[,] strFeatures = new string[1,features.Length];
                 int i = 0;
-                foreach (int temp in features)
+                foreach (double temp in features)
                 {
                     strFeatures[0, i++] = temp.ToString();
                 }

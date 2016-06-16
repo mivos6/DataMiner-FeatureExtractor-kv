@@ -10,6 +10,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+//Acord
+using Accord.Statistics;
+using Accord.Math;
+using System.Threading;
+
 namespace RUAP_KV_.NET
 {
     public partial class WebForm1 : System.Web.UI.Page
@@ -75,11 +80,9 @@ namespace RUAP_KV_.NET
         {
             //Get path to haar testing file
             string haarPath = Server.MapPath("~/haar/haarcascade_frontalface_alt_tree.xml");
-
             Image<Bgr, byte> ImageFrame = new Image<Bgr, byte>(bmp);
             //Convert to gray scale
             Image<Gray, byte> grayFrame = ImageFrame.Convert<Gray, byte>();
-
             //Classifier
             CascadeClassifier classifier = new CascadeClassifier(haarPath);
             //Detect faces. gray scale, windowing scale factor (closer to 1 for better detection),minimum number of nearest neighbours
@@ -94,10 +97,7 @@ namespace RUAP_KV_.NET
             }
             control_label.Text = "Found " + rectangles.Length.ToString() + " faces on image";
             control_label.ForeColor = Color.Green;
-
-            int[] feature;
-
-
+         
             //get all features here
             string[] predictedClasses = new string[rectangles.Length];
 
@@ -105,10 +105,11 @@ namespace RUAP_KV_.NET
             for (counter = 0; counter < rectangles.Length; counter++)
             {
                 //Get LBP BUT FIRST CUT FACE OUT AND RESIZE IMG
-                feature = calculateLBP(CutFaceOut(bmp, rectangles[counter]));
-                
+                //Calculate features LBP+PCA
+                double[] resultFeatures = calculateFeatureArray(bmp, rectangles);
+
                 //get class for current face
-                CallRequestResponseService.ModelRequest.InvokeRequestResponseService(feature).Wait();
+                CallRequestResponseService.ModelRequest.InvokeRequestResponseService(resultFeatures).Wait();
                 predictedClasses[counter] = getClass( CallRequestResponseService.ModelRequest.Result );
               
             }
@@ -121,10 +122,136 @@ namespace RUAP_KV_.NET
 
             Image1.ImageUrl = Server.MapPath("~/slike/" + predictedClass + "/" + "1.jpg");
             
-
-
             return true;
         }//End of getFeatureArray
+
+        private double[] calculateFeatureArray(Bitmap bmp, Rectangle[] rectangles)
+        {
+            List<double> LBP_PCA = new List<double>();
+            int[] feature = new int[4 * 59];
+            double[,] featurePCA;
+            double[] featurePCA_toWrite;
+            //PCA
+            featurePCA = calculatePCA(CutFaceOut(bmp, rectangles[0]));
+            featurePCA_toWrite = Array2DTo1D(featurePCA);
+
+            //LBP
+            Bitmap face = CutFaceOut(bmp, rectangles[0]);
+            Bitmap[] segments = makeSegments(face);
+
+            for(int i = 0; i < segments.Length; i++)
+            {
+                int[] temp = calculateLBP(segments[i]);
+                for(int j = 0; j < 59; j++)
+                {
+                    feature[59 * i + j] = temp[j];
+                    LBP_PCA.Add( temp[j] );
+                }
+            }
+
+            for(int i = 0; i < featurePCA_toWrite.Length; i++)
+            {
+                LBP_PCA.Add(featurePCA_toWrite[i]);
+            }
+
+            double[] finalResult = LBP_PCA.ToArray();
+            return finalResult;
+        }//End of calculateFeatureArray
+
+        private double[,] calculatePCA(Bitmap bmp)
+        {
+            double[,] sourceMatrix = getSourceMatrix(bmp);
+            var pca = new Accord.Statistics.Analysis.PrincipalComponentAnalysis(sourceMatrix, Accord.Statistics.Analysis.AnalysisMethod.Center);
+            // Compute the Principal Component Analysis
+            pca.Compute();
+            //Eigenvalues
+            double[] eigenvalues = pca.Eigenvalues;
+            double[,] eigenvectors = pca.ComponentMatrix;
+            double temp = eigenvalues.Max();
+            double[,] output = new double[1, eigenvalues.Length];
+
+            int maxRow = eigenvalues.IndexOf(temp);
+
+            for (int i = 0; i < eigenvalues.Length; i++)
+            {
+                //output[0, i] = eigenvectors[maxRow, i];
+                output[0, i] = eigenvalues[i];
+            }
+
+
+            // Creates a projection considering 1x dimensions
+            //double[,] components = pca.Transform(eigenvectors, 1);
+            //Write to PCA_features.txt file
+
+            return output;
+
+        }//End of calculatePCA
+
+        private double[,] getSourceMatrix(Bitmap bmp)
+        {
+            double[,] matrix = new double[bmp.Height, bmp.Width];
+            for (int i = 0; i < bmp.Height; i++)
+            {
+                for (int j = 0; j < bmp.Width; j++)
+                {
+                    matrix[i, j] = (bmp.GetPixel(i, j).R + bmp.GetPixel(i, j).G + bmp.GetPixel(i, j).B) / 3;
+                }
+            }
+
+            return matrix;
+        }//End of getSourceMatrix
+
+        private double[] Array2DTo1D(double[,] array)
+        {
+            double[] newArray = new double[array.Length];
+            System.Buffer.BlockCopy(array, 0, newArray, 0, array.Length * sizeof(double));
+            return newArray;
+        }//End of Array2DTo1D
+
+        private Bitmap[] makeSegments(Bitmap bmp)
+        {
+            int newWidth = 16, newHeight = 16;
+            Bitmap[] result = new Bitmap[4];
+
+            for (int i = 0; i < 4; i++)
+            {
+                result[i] = new Bitmap(newWidth, newHeight, PixelFormat.Format24bppRgb);
+                using (Graphics graphics = Graphics.FromImage(result[i]))
+                {
+                    int x = 0, y = 0;
+                    switch (i)
+                    {
+                        case 0:
+                            x = 0;
+                            y = 0;
+                            break;
+
+                        case 1:
+                            x = 16;
+                            y = 0;
+                            break;
+
+                        case 2:
+                            x = 0;
+                            y = 16;
+                            break;
+
+                        case 3:
+                            x = 16;
+                            y = 16;
+                            break;
+                    }
+                    Rectangle segment = new Rectangle(x, y, newWidth, newHeight);
+                    Rectangle destRect = new Rectangle(0, 0, newWidth, newHeight);
+
+                    graphics.DrawImage(bmp, destRect, segment, GraphicsUnit.Pixel);
+                }
+            }
+
+            return result;
+        }//End of makeSegments
+
+
 
         private string getClass(string output)
         {
