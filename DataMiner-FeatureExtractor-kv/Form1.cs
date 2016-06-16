@@ -195,36 +195,45 @@ namespace DataMiner_FeatureExtractor_kv
             CascadeClassifier classifier = new CascadeClassifier(haarPath + "\\haarcascade_frontalface_alt_tree.xml");
             //Detect faces. gray scale, windowing scale factor (closer to 1 for better detection),minimum number of nearest neighbours
             //min and max size in pixels. Start to search with a window of 800 and go down to 100 
-            Rectangle[] rectangles = classifier.DetectMultiScale(grayFrame, 1.4, 0, new Size(50,50), new Size(800,800));
+            Rectangle[] rectangles = classifier.DetectMultiScale(grayFrame, 1.4, 0, new Size(15,15), new Size(800,800));
 
-            if (rectangles == null)
+            if (rectangles.Length == 0)
             {
                 LOG("No face!", true);
                 return false;
             }
             LOG("Face number: " + rectangles.Length.ToString(), false);
 
-            int[] feature;
+            int[] feature = new int[4*59];
             double[,] featurePCA;
             double[] featurePCA_toWrite;
 
-            for (int counter = 0; counter < rectangles.Length; counter++)
+            //Get LBP or PCA BUT FIRST CUT FACE OUT AND RESIZE IMG
+            if (radio_LBP.Checked)
             {
-                //Get LBP or PCA BUT FIRST CUT FACE OUT AND RESIZE IMG
-                if (radio_LBP.Checked)
+
+                Bitmap face = CutFaceOut(bmp, rectangles[0], fileCounter, folderCounter, "0");
+                Bitmap[] segments = makeSegments(face);
+                for (int i = 0; i < segments.Length; i++)
                 {
-                    feature = calculateLBP(CutFaceOut(bmp, rectangles[counter], fileCounter, folderCounter, counter.ToString()));
-                    writeToFile(feature, folderCounter);
+                    //Save segment
+                    segments[i].Save(facesPath + "\\" + folderCounter + "\\" + fileCounter + "-s" + i.ToString() + ".bmp" );
+
+                    int[] temp = calculateLBP(segments[i]);
+                    for (int j = 0; j < 59; j++)
+                    {
+                        feature[59 * i + j] = temp[j];
+                    }
                 }
-                    
-                else if (radio_PCA.Checked){
-                    featurePCA = calculatePCA(CutFaceOut(bmp, rectangles[counter], fileCounter, folderCounter, counter.ToString()));
-                    LOG("PCA Calculated!", false);
-                    featurePCA_toWrite = Array2DTo1D(featurePCA);
-                    writeToFile(featurePCA_toWrite, folderCounter);
-                }  
-                          
+                writeToFile(feature, folderCounter);
             }
+                    
+            else if (radio_PCA.Checked){
+                featurePCA = calculatePCA(CutFaceOut(bmp, rectangles[0], fileCounter, folderCounter, "0"));
+                LOG("PCA Calculated!", false);
+                featurePCA_toWrite = Array2DTo1D(featurePCA);
+                writeToFile(featurePCA_toWrite, folderCounter);
+            }  
 
             return true;
         }
@@ -253,7 +262,7 @@ namespace DataMiner_FeatureExtractor_kv
 
         private Bitmap resizeImage(Bitmap bmp)
         {
-            int newWidth = 48, newHeight = 48;
+            int newWidth = 32, newHeight = 32;
             Bitmap newImage = new Bitmap(newWidth, newHeight, PixelFormat.Format24bppRgb);
 
             // Draws the image in the specified size with quality mode set to HighQuality
@@ -268,6 +277,48 @@ namespace DataMiner_FeatureExtractor_kv
             return newImage;
         }
 
+        private Bitmap[] makeSegments(Bitmap bmp)
+        {
+            int newWidth = 16, newHeight = 16;
+            Bitmap[] result = new Bitmap[4];
+
+            for (int i = 0; i < 4; i++) {
+                result[i] = new Bitmap(newWidth, newHeight, PixelFormat.Format24bppRgb);
+                using (Graphics graphics = Graphics.FromImage(result[i]))
+                {
+                    int x = 0, y = 0;
+                    switch (i)
+                    {
+                        case 0:
+                            x = 0;
+                            y = 0;
+                            break;
+
+                        case 1:
+                            x = 16;
+                            y = 0;
+                            break;
+
+                        case 2:
+                            x = 0;
+                            y = 16;
+                            break;
+
+                        case 3:
+                            x = 16;
+                            y = 16;
+                            break;
+                    }
+                    Rectangle segment = new Rectangle(x, y, newWidth, newHeight);
+                    Rectangle destRect = new Rectangle(0, 0, newWidth, newHeight);
+
+                    graphics.DrawImage(bmp, destRect, segment, GraphicsUnit.Pixel);
+                }
+            }
+
+            return result;
+        }//End of makeSegments
+
 
         //LBP
         private int[] calculateLBP(Bitmap bmp)
@@ -277,10 +328,10 @@ namespace DataMiner_FeatureExtractor_kv
 
 
             //Calculate LBP
-            for (int i = 1; i < bmp.Height; i = i + 3)
+            for (int i = 1; i < bmp.Height-1; i++)
             {
 
-                for (int j = 1; j < bmp.Width; j = j + 3)
+                for (int j = 1; j < bmp.Width-1; j++)
                 {
 
                     currentFeature = calculateCurrentLBP(j,i,bmp);

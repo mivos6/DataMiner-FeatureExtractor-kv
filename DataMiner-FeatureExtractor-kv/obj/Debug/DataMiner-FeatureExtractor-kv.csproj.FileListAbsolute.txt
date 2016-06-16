@@ -143,3 +143,12 @@ C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtracto
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.MachineLearning.GPL.xml
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.Math.xml
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.Statistics.xml
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.dll.config
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.MachineLearning.GPL.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.Math.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.Statistics.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.xml
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.MachineLearning.GPL.xml
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.Math.xml
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.Statistics.xml

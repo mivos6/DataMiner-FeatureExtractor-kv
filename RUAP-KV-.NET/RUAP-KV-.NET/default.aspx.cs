@@ -116,7 +116,11 @@ namespace RUAP_KV_.NET
             //Print
             label_features.Text += "<br><br>";
             label_features.Text += "Predicted class: <br>";
-            label_features.Text += findTrueClass(predictedClasses);
+            String predictedClass = findTrueClass(predictedClasses);
+            label_features.Text += predictedClass;
+
+            Image1.ImageUrl = Server.MapPath("~/slike/" + predictedClass + "/" + "1.jpg");
+            
 
 
             return true;

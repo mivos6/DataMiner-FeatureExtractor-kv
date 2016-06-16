@@ -11,6 +11,14 @@
         h1{
             text-align: center;
         }
+        #form1 {
+            width: 442px;
+        }
+        #div_picture{
+            position:absolute;
+            top: 71px;
+            left: 500px;
+        }
     </style>
 
 </head>
@@ -34,6 +42,9 @@
 
         <asp:Label ID="label_features" runat="server"></asp:Label>
         
+    <div style="width: 440px; height: 202px;" id="div_picture">
+        <asp:Image ID="Image1" runat="server" />
+
     </form>
 
     </body>
