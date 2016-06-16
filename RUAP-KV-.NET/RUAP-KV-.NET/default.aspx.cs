@@ -120,7 +120,8 @@ namespace RUAP_KV_.NET
             String predictedClass = findTrueClass(predictedClasses);
             label_features.Text += predictedClass;
 
-            Image1.ImageUrl = Server.MapPath("~/slike/" + predictedClass + "/" + "1.jpg");
+            String link = @"http://www.etfos.unios.hr/~mivosevic/POLITICARI_novi/" + predictedClass + "/1.jpg";
+            Image1.ImageUrl = (link);
             
             return true;
         }//End of getFeatureArray
