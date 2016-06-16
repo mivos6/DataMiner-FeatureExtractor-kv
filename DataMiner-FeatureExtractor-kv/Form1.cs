@@ -209,7 +209,41 @@ namespace DataMiner_FeatureExtractor_kv
             double[] featurePCA_toWrite;
 
             //Get LBP or PCA BUT FIRST CUT FACE OUT AND RESIZE IMG
-            if (radio_LBP.Checked)
+            //Generate LBP and PCA
+            if (cb_LBPandPCA.Checked)
+            {
+                List<double> LBP_PCA = new List<double>();
+                //PCA
+                featurePCA = calculatePCA(CutFaceOut(bmp, rectangles[0], fileCounter, folderCounter, "0"));
+                LOG("PCA Calculated!", false);
+                featurePCA_toWrite = Array2DTo1D(featurePCA);
+
+                //LBP
+                Bitmap face = CutFaceOut(bmp, rectangles[0], fileCounter, folderCounter, "0");
+                Bitmap[] segments = makeSegments(face);
+                for (int i = 0; i < segments.Length; i++)
+                {
+                    //Save segment
+                    segments[i].Save(facesPath + "\\" + folderCounter + "\\" + fileCounter + "-s" + i.ToString() + ".bmp");
+
+                    int[] temp = calculateLBP(segments[i]);
+                    for (int j = 0; j < 59; j++)
+                    {
+                        feature[59 * i + j] = temp[j];
+                        LBP_PCA.Add( temp[j] );
+                    }
+                }
+
+                for(int z = 0; z < featurePCA_toWrite.Length; z++)
+                {
+                    LBP_PCA.Add(featurePCA_toWrite[z]);
+                }
+
+                writeToFile(LBP_PCA.ToArray(), folderCounter);
+            }//End of if
+
+
+            else if (radio_LBP.Checked)
             {
 
                 Bitmap face = CutFaceOut(bmp, rectangles[0], fileCounter, folderCounter, "0");
@@ -521,7 +555,14 @@ namespace DataMiner_FeatureExtractor_kv
         {
             String textToWrite = "";
             String header = "";
-            String name = "PCA_features.tsv";
+            String name = "";
+
+            if (cb_LBPandPCA.Checked)
+                name = "LBP_PCA_Features.tsv";
+            else
+                name = "PCA_features.tsv";
+
+               
 
             //Header
             for (int i = 0; i < features.Length; i++)
@@ -676,6 +717,21 @@ namespace DataMiner_FeatureExtractor_kv
                 }
             }
             
+        }
+
+        private void cb_LBPandPCA_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cb_LBPandPCA.Checked)
+            {
+                radio_LBP.Enabled = false;
+                radio_PCA.Enabled = false;
+            }
+            else
+            {
+                radio_LBP.Enabled = true;
+                radio_PCA.Enabled = true;
+            }
+
         }
     }//End of Class
 

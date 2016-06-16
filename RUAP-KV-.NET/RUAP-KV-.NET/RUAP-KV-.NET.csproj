@@ -128,7 +128,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="haar\" />
-    <Folder Include="slike\" />
     <Folder Include="Uploads\" />
   </ItemGroup>
   <PropertyGroup>

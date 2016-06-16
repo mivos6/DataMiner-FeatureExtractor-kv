@@ -39,6 +39,7 @@
             this.radio_PCA = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cb_LBPandPCA = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -153,11 +154,23 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             // 
+            // cb_LBPandPCA
+            // 
+            this.cb_LBPandPCA.AutoSize = true;
+            this.cb_LBPandPCA.Location = new System.Drawing.Point(305, 171);
+            this.cb_LBPandPCA.Name = "cb_LBPandPCA";
+            this.cb_LBPandPCA.Size = new System.Drawing.Size(236, 21);
+            this.cb_LBPandPCA.TabIndex = 16;
+            this.cb_LBPandPCA.Text = "Generate LBP and PCA together";
+            this.cb_LBPandPCA.UseVisualStyleBackColor = true;
+            this.cb_LBPandPCA.CheckedChanged += new System.EventHandler(this.cb_LBPandPCA_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(681, 496);
+            this.Controls.Add(this.cb_LBPandPCA);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_facesOutput);
@@ -175,6 +188,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -191,6 +205,7 @@
         private System.Windows.Forms.RadioButton radio_PCA;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox cb_LBPandPCA;
     }
 }
 
