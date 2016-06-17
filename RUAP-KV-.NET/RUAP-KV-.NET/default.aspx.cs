@@ -109,7 +109,7 @@ namespace RUAP_KV_.NET
                 double[] resultFeatures = calculateFeatureArray(bmp, rectangles);
 
                 //get class for current face
-                CallRequestResponseService.ModelRequest.InvokeRequestResponseService(resultFeatures).Wait();
+                CallRequestResponseService.ModelRequest.InvokeRequestResponseService(resultFeatures).Wait();//ERROR
                 predictedClasses[counter] = getClass( CallRequestResponseService.ModelRequest.Result );
               
             }
@@ -154,6 +154,8 @@ namespace RUAP_KV_.NET
             {
                 LBP_PCA.Add(featurePCA_toWrite[i]);
             }
+            //Add class
+            //LBP_PCA.Add(0);
 
             double[] finalResult = LBP_PCA.ToArray();
             return finalResult;

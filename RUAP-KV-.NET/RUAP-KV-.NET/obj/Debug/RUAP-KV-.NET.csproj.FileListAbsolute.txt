@@ -141,3 +141,12 @@ C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\System.Net.Http.Formatting.dll
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\Newtonsoft.Json.xml
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\System.Net.Http.Formatting.xml
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.dll.config
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.MachineLearning.GPL.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.Math.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.Statistics.dll
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.xml
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.MachineLearning.GPL.xml
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.Math.xml
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.Statistics.xml
