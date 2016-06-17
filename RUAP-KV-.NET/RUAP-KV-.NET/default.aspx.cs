@@ -49,6 +49,7 @@ namespace RUAP_KV_.NET
                         string savePath = Server.MapPath("~/Uploads/" + FileUpload1.FileName);
 
                         FileUpload1.SaveAs(savePath);
+                        FileUpload1.Dispose();
                         control_label.Text = "File Uploaded!";
                         control_label.ForeColor = System.Drawing.Color.Green;
 
@@ -73,6 +74,7 @@ namespace RUAP_KV_.NET
             Bitmap bmp = new Bitmap(path);
             label_features.Text = "";
             getFeatureArray(bmp);
+            bmp.Dispose();
 
         }//End of imageAnalysis
 

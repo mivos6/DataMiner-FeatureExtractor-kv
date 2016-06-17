@@ -150,3 +150,12 @@ D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\RUAP-KV-.
 D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.MachineLearning.GPL.xml
 D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.Math.xml
 D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.Statistics.xml
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.dll.config
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.MachineLearning.GPL.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.Math.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.Statistics.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.xml
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.MachineLearning.GPL.xml
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.Math.xml
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.Statistics.xml
