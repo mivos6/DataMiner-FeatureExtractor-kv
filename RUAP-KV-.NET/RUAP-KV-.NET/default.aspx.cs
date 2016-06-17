@@ -155,7 +155,7 @@ namespace RUAP_KV_.NET
                 LBP_PCA.Add(featurePCA_toWrite[i]);
             }
             //Add class
-            //LBP_PCA.Add(0);
+            LBP_PCA.Add(0);
 
             double[] finalResult = LBP_PCA.ToArray();
             return finalResult;
@@ -288,8 +288,9 @@ namespace RUAP_KV_.NET
                 count.Add(classesArray.FindAll(x=> x == classesInvolved[i] ).Count );
             }
             int max = count.Max();
+            int maxIndex = count.IndexOf(max);
             //Return class
-            return classesInvolved[max].ToString();
+            return classesInvolved[maxIndex].ToString();
         }//End of findTrueClass
 
         private Bitmap CutFaceOut(Bitmap srcBitmap, Rectangle section)
@@ -309,7 +310,7 @@ namespace RUAP_KV_.NET
 
         private Bitmap resizeImage(Bitmap bmp)
         {
-            int newWidth = 48, newHeight = 48;
+            int newWidth = 32, newHeight = 32;
             Bitmap newImage = new Bitmap(newWidth, newHeight, PixelFormat.Format24bppRgb);
 
             // Draws the image in the specified size with quality mode set to HighQuality
@@ -332,10 +333,10 @@ namespace RUAP_KV_.NET
 
 
             //Calculate LBP
-            for (int i = 1; i < bmp.Height; i = i + 3)
+            for (int i = 1; i < bmp.Height-1; i++)
             {
 
-                for (int j = 1; j < bmp.Width; j = j + 3)
+                for (int j = 1; j < bmp.Width-1; j++)
                 {
 
                     currentFeature = calculateCurrentLBP(j, i, bmp);
