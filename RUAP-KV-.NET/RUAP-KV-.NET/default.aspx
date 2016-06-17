@@ -19,6 +19,10 @@
             top: 71px;
             left: 500px;
         }
+
+        #div_picture #Label1,#Label2 {
+            display: block;
+        }
     </style>
 
 </head>
@@ -45,6 +49,9 @@
     <div style="width: 440px; height: 202px;" id="div_picture">
         <asp:Image ID="Image1" runat="server" />
 
+        <asp:Label ID="Label1" runat="server" Text="" ></asp:Label>
+
+        <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
     </form>
 
     </body>

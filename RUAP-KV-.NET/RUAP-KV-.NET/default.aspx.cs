@@ -14,6 +14,7 @@ using System.Web.UI.WebControls;
 using Accord.Statistics;
 using Accord.Math;
 using System.Threading;
+using System.Net;
 
 namespace RUAP_KV_.NET
 {
@@ -54,6 +55,7 @@ namespace RUAP_KV_.NET
                         control_label.ForeColor = System.Drawing.Color.Green;
 
                         imageAnalysis(savePath);
+                        System.IO.File.Delete(savePath);
                     }                 
                 }
                 
@@ -124,7 +126,25 @@ namespace RUAP_KV_.NET
 
             String link = @"http://www.etfos.unios.hr/~mivosevic/POLITICARI_novi/" + predictedClass + "/1.jpg";
             Image1.ImageUrl = (link);
-            
+
+            //Open file with polititian names and data
+            String link1 = @"http://www.etfos.unios.hr/~mivosevic/POLITICARI_novi/politicari.txt";
+            var webClient = new WebClient();
+            string file = webClient.DownloadString(link1);
+
+            //Read lines until the right class is found
+            string[] rows = file.Split(new char[] { '\n' });
+            string[] data = new string[3];
+            for (int i = 1; i < rows.Length; i++)
+            {
+                data = rows[i].Split(new char[] { '\t' });
+                if (predictedClass == data[0]) break;
+            }
+
+            //fill labels with data
+            Label1.Text = data[1];
+            Label2.Text = data[2];
+
             return true;
         }//End of getFeatureArray
 
