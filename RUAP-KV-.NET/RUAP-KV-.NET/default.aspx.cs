@@ -49,6 +49,10 @@ namespace RUAP_KV_.NET
                     {
                         string savePath = Server.MapPath("~/Uploads/" + FileUpload1.FileName);
 
+                        Image1.ImageUrl = null;
+                        Label1.Text = "";
+                        Label2.Text = "";
+
                         FileUpload1.SaveAs(savePath);
                         control_label.Text = "File Uploaded!";
                         control_label.ForeColor = System.Drawing.Color.Green;
@@ -92,7 +96,7 @@ namespace RUAP_KV_.NET
             //min and max size in pixels. Start to search with a window of 800 and go down to 100 
             Rectangle[] rectangles = classifier.DetectMultiScale(grayFrame, 1.4, 0, new Size(15, 15), new Size(800, 800));
 
-            if (rectangles == null)
+            if (!rectangles.Any())
             {
                 control_label.Text = "No faces on image";
                 control_label.ForeColor = Color.Red;
