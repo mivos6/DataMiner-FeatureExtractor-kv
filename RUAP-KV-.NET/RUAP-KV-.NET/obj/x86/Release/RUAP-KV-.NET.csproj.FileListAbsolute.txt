@@ -65,3 +65,4 @@ C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\zh-tw\ZedGraph.resources.dll
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\obj\x86\Release\RUAP-KV-.NET.dll
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\obj\x86\Release\RUAP-KV-.NET.pdb
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\obj\x86\Release\RUAP-KV-.NET.csprojResolveAssemblyReference.cache
