@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="RUAP-KV" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Josip\\Desktop\\Faks\\2\.\ semestar\\ruap\\kv\\GIT\\KV\\RUAP-KV-\.NET\\RUAP-KV-\.NET\\obj\\Debug\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Josip\\Desktop\\Faks\\2\.\ semestar\\ruap\\kv\\GIT\\KV\\RUAP-KV-\.NET\\RUAP-KV-\.NET\\obj\\Debug\\Package\\PackageTmp$" />
+  </parameter>
+</parameters>

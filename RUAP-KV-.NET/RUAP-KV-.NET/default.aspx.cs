@@ -8,13 +8,13 @@ using System.Drawing.Imaging;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 //Acord
 using Accord.Statistics;
 using Accord.Math;
 using System.Threading;
 using System.Net;
+using System.Web.Hosting;
 
 namespace RUAP_KV_.NET
 {
@@ -50,7 +50,6 @@ namespace RUAP_KV_.NET
                         string savePath = Server.MapPath("~/Uploads/" + FileUpload1.FileName);
 
                         FileUpload1.SaveAs(savePath);
-                        FileUpload1.Dispose();
                         control_label.Text = "File Uploaded!";
                         control_label.ForeColor = System.Drawing.Color.Green;
 

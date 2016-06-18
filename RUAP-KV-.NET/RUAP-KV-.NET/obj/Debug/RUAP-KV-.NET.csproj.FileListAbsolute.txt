@@ -85,7 +85,6 @@ C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\tr\ZedGraph.resources.dll
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\zh-cn\ZedGraph.resources.dll
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\zh-tw\ZedGraph.resources.dll
-C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\obj\Debug\RUAP-KV-.NET.csprojResolveAssemblyReference.cache
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\obj\Debug\RUAP-KV-.NET.dll
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\obj\Debug\RUAP-KV-.NET.pdb
 D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\RUAP-KV-.NET\RUAP-KV-.NET\bin\roslyn\csc.exe
@@ -159,3 +158,13 @@ C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.MachineLearning.GPL.xml
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.Math.xml
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\Accord.Statistics.xml
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\Microsoft.Azure.AppService.ApiApps.Service.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\Swashbuckle.Core.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\System.Web.Http.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\System.Web.Http.WebHost.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\WebActivatorEx.dll
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\System.Web.Http.xml
+C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\RUAP-KV-.NET\RUAP-KV-.NET\bin\System.Web.Http.WebHost.xml
