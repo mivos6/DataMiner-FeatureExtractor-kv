@@ -2,119 +2,32 @@ Klasa	Ime	Funkcija
 1	Tihomir Oreškoviæ	premijer
 2	Tomislav Karamarko	prvi pdpredsjednik vlade
 3	Božo Petrov	podpredsjednik vlade
-4	Anton Kliman	ministar turizma
-5	Bernardica Juretiæ	ministrica socijalne politike i mladih
-6	Dario Nakiæ	ministar zdravlja
-7	Darko Horvat	ministar poduzetništvai obrta
-8	Josip Buljeviæ	ministar obrane
-9	Lovro Kušèeviæ	ministar graditeljstva i poslovnog ureðenja
-10	Miro Kovaè	ministar vanjskih i europskih poslova
-11	Nada Šikiæ	ministrica rada i mirovinskog sustava
-12	Oleg Butkoviæ	ministar pomorstva, prometa i infrastrukture
-13	Predrag Šustar	ministar znanosti obrazovanja i sporta
-14	Tomislav Tolušiæ	ministar regionalnog razvoja i fondova Europske unije
-15	Zdravko Mariæ	ministar financija
-16	Zlatko Hasanbegoviæ	ministar kulture
-17	Tomislav Paneniæ	ministar gospodarstva
-18	Ante Šprlje	ministar pravosða
-19	Vlaho Orepiæ	ministar unutarnjih poslova
-20	Davor Romiæ	ministar poljoprivrede
-21	Slaven Dobroviæ	ministar zaštite okoliša i prirode
-22	Dubravka Jurlina Alibegoviæ	ministrica uprave
-23	Tomo Medved	ministar branitelja
-24	Mijo Crnoja	bivši ministar branitelja
-25	Zoran Milanoviæ	saborski zastupnik, bivši premijer
-26	Vesna Pusiæ	saborska zastupnica, bivša ministrica vanjskih i europskih poslova
-27	Ranko Ostojiæ	saborski zastupnik, bivši ministar unutarnjih poslova
-28	Milanka Opaèiæ	saborska zastupnica, bivša ministrica socijalne politike i mladih
-29	Branko Grèiæ	saborski zastupnik, bivši ministar regionalnog razvoja i fondova Europske unije
-30	Boris Lalovac	saborski zastupnik, bivši ministar financija
-31	Ivan Vrdoljak	saborski zastupnik, bivši ministar gospodarstva
-32	Gordan Maras	saborski zastupnik, bivši ministar poduzetništva i obrta
-33	Arsen Bauk	saborski zastupnik, bivši ministar uprave
-34	Orsat Miljeniæ	saborski zastupnik, bivši ministar pravosuða
-35	Ante Kotromanoviæ	bivši ministar obrane
-36	Siniša Varga	saborski zastupnik, bivši ministar zdravlja
-37	Anka Mrak-Taritaš	saborska zastupnica, bivša ministrica graditeljstva i poslovnog ureðenja
-38	Tihomir Jakovina	saborski zastupnik, bivši ministar poljoprivrede
-39	Mihael Zmajloviæ	saborski zastupnik, bivši ministar zaštite okoliša i prirode
-40	Darko Lorencin	ministar turizma
-41	Berislav Šipuš	bivši ministar kulture
-42	Predrag Matiæ	saborski zastupnik, bivši ministar branitelja
-43	Vedran Mornar	bivši ministar znanosti obrazovnja i sporta
-44	Slavko Liniæ	bivši ministar financija
-45	Jadranka Kosor	bivša premijerka
-46	Petar Èobankoviæ	bivši ministar poljoprivrede, ribarstva i ruralnog razvoja
-47	Darko Milinoviæ	saborski zastupnik, bivši ministar zdravstva i socijalne skrbi
-48	Božidar Pankretiæ	bivši ministar regionalnog razvoja, šumarstva i vodnog gospodarstva
-49	Gordan Jandrokoviæ	saborski zastupnik, ministar vanjskih poslova i europskih integracija
-50	Domagoj Ivan Miloševiæ	saborski zastupnik, bivši ptpredsjednik vlade
-51	Branko Baèiæ	saborski zastupnik, bivši ministar zaštite okoliša, prostornog ureðenja i graditeljstva
-52	Dražen Bošnjakoviæ	saborski zastupnik, bivši ministar pravosuða
-53	Martina Daliæ	bivša ministrica financija
-54	Damir Bajs	bivši ministar turizma
-55	Ðuro Popijaè	bivši ministar gospodarstva, rada i poduzetništva
-56	Tomislav Iviæ	bivši ministar obitelji, branitelja i meðugeneracijske solidarnosti
-57	Davor Božinoviæ	bivši ministar obrane
-58	Božidar Kalmeta	bivši ministar mora, prometa i infrastrukture
-59	Jasen Mesiæ 	saborski zastupnik, bivši ministar kulture
-60	Davorin Mlakar	bivši ministar uprave
-61	Ivo Sanader	bivši premijer
-62	Damir Polanèec	bivši ministar ministar gospodarstva, rada i poduzetništva
-63	Ivan Šuker	saborski zastupnik, bivši ministar financija
-64	Berislav Ronèeviæ	bivši ministar unutarnjih poslova
-65	Dragan Primorac	bivši ministar znanosti, obrazovanja i športa
-66	Željko Reiner	predsjednik sabora
-67	Josip Leko	bivši predsjednik sabora
-68	Luka Bebiæ	bivši predsjednik sabora
-69	Marija Budimir	saborska zastupnica
-70	Miro Bulj	saborski zastupnik
-71	Radimir Èaèiæ	saborski zastupnik
-72	Pero Æoriæ	saborski zastupnik
-73	Miodrag Demo	saborski zastupnik
-74	Igor Dragovan	saborski zastupnik
-75	Josip Ðakiæ	saborski zastupnik
-76	Branimir Glavaš	saborski zastupnik
-77	Peða Grbin	saborski zastupnik
-78	Siniša Hajdaš Donèiæ	saborski zastupnik, bivši ministar prometa, pomorstva i infrastrukture
-79	Silvano Hrelja	saborski zastupnik
-80	Branko Hrg	saborski zastupnik
-81	Ladislav Ilèiæ	saborski zastupnik
-82	Ivo Jelušiæ	saborski zastupnik
-83	Željko Jovanoviæ	saborski zastupnik,  bivši ministar znanosti, obrazovanja i sporta
-84	Šandor Juhas	saborski zastupnik
-85	Veljko Kajtazi	saborski zastupnik
-86	Darinko Kosor	saborski zastupnik
-87	Ivan Lovrinoviæ	saborski zastupnik
-88	Goran Mariæ	saborski zastupnik
-89	Boris Miletiæ	saborski zastupnik
-90	Mirando Mrsiæ	saborski zastupnik
-91	Rajko Ostojiæ	saborski zastupnik, bivši ministar zdravlja
-92	Jaroslav Pecnik	saborski zastupnik
-93	Sandra Perkoviæ saborska zastupnica
-94	Stipe Petrina	saborski zastupnik
-95	Robert Podolnjak	saborski zastupnik
-96	Drago Prgomet	saborski zastupnik
-97	Milorad Pupovac	saborski zastupnik
-98	Furio Radin	saborski zastupnik
-99	Josipa Rimac	saborska zastupnica
-100	Ingrid Antièeviæ Marinoviæ	saborska zastupnica
-101	Josip Salapiæ	saborski zastupnik
-102	Ivan Sinèiæ	saborski zastupnik
-103	Gordana Sobol	saborska zastupnica
-104	Nenad Staziæ	saborski zastupnik
-105	Ines Strenja-Liniæ	saborska zastupnica
-106	Milivoj Špika	saborski zastupnik
-107	Ivan Tepeš	saborski zastupnik
-108	Nensi Tireli	saborska zastupnica
-109	Miroslav Tuðman	saborski zastupnik
-110	Milan Bandiæ	gradonaèelnik Zagreba
-111	Ivica Vrkiæ	gradonaèelnik Osijeka
-112	Krešimir Bubalo	bivši gradonaèelnika Osijeka
-113	Anto Ðapiæ	bivši gradonaèelnik Osijeka
-114	Ivo Baldasar	gradonaèelnik Splita
-115	Željko Kerum	bivši gradonaèelnik Splita
-116	Kolinda Grabar Kitaroviæ	predsjednica države
-117	Ivo Josipoviæ	bivši predsjednik države
-118	Stjepan Mesiæ	bivši predsjednik države
-119	Vladimir Šeks	bivši predsjednik sabora
+4	Zoran Milanoviæ	saborski zastupnik, bivši premijer
+5	Vesna Pusiæ	saborska zastupnica, bivša ministrica vanjskih i europskih poslova
+6	Ranko Ostojiæ	saborski zastupnik, bivši ministar unutarnjih poslova
+7	Slavko Liniæ	bivši ministar financija
+8	Jadranka Kosor	bivša premijerka
+9	Petar Èobankoviæ	bivši ministar poljoprivrede, ribarstva i ruralnog razvoja
+10	Darko Milinoviæ	saborski zastupnik, bivši ministar zdravstva i socijalne skrbi
+11	Ivo Sanader	bivši premijer
+12	Damir Polanèec	bivši ministar ministar gospodarstva, rada i poduzetništva
+13	Ivan Šuker	saborski zastupnik, bivši ministar financija
+14	Željko Reiner	predsjednik sabora
+15	Josip Leko	bivši predsjednik sabora
+16	Luka Bebiæ	bivši predsjednik sabora
+17	Branimir Glavaš	saborski zastupnik
+18	Peða Grbin	saborski zastupnik
+19	Veljko Kajtazi	saborski zastupnik
+20	Drago Prgomet	saborski zastupnik
+21	Milorad Pupovac	saborski zastupnik
+22	Ingrid Antièeviæ Marinoviæ	saborska zastupnica
+23	Ivan Sinèiæ	saborski zastupnik
+24	Nenad Staziæ	saborski zastupnik
+25	Miroslav Tuðman	saborski zastupnik
+26	Milan Bandiæ	gradonaèelnik Zagreba
+27	Anto Ðapiæ	bivši gradonaèelnik Osijeka
+28	Željko Kerum	bivši gradonaèelnik Splita
+29	Kolinda Grabar Kitaroviæ	predsjednica države
+30	Ivo Josipoviæ	bivši predsjednik države
+31	Stjepan Mesiæ	bivši predsjednik države
+32	Vladimir Šeks	bivši predsjednik sabora
