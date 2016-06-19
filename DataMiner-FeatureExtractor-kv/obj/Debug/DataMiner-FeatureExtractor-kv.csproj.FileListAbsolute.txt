@@ -153,3 +153,4 @@ D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner
 D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.Math.xml
 D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\bin\Debug\Accord.Statistics.xml
 C:\Users\Josip\Desktop\Faks\2. semestar\ruap\kv\GIT\KV\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner_FeatureExtractor_kv.Form2.resources
+D:\racunarstvo\4_god\analiza_pod\projekt\DataMiner-FeatureExtractor-kv\DataMiner-FeatureExtractor-kv\obj\Debug\DataMiner_FeatureExtractor_kv.Form2.resources

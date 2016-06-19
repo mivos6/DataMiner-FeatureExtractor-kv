@@ -234,12 +234,12 @@ namespace DataMiner_FeatureExtractor_kv
             {
                 List<double> LBP_PCA = new List<double>();
                 //PCA
-                featurePCA = calculatePCA(CutFaceOut(bmp, rectangles[0], fileCounter, folderCounter, "0"));
+                featurePCA = calculatePCA(CutFaceOut(bmp, rectangles[rectangles.Length-1], fileCounter, folderCounter, "0"));
                 LOG("PCA Calculated!", false);
                 featurePCA_toWrite = Array2DTo1D(featurePCA);
 
                 //LBP
-                Bitmap face = CutFaceOut(bmp, rectangles[0], fileCounter, folderCounter, "0");
+                Bitmap face = CutFaceOut(bmp, rectangles[rectangles.Length-1], fileCounter, folderCounter, "0");
                 Bitmap[] segments = makeSegments(face);
 
 
