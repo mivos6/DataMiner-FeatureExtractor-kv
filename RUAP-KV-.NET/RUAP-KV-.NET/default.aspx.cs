@@ -94,14 +94,16 @@ namespace RUAP_KV_.NET
             CascadeClassifier classifier = new CascadeClassifier(haarPath);
             //Detect faces. gray scale, windowing scale factor (closer to 1 for better detection),minimum number of nearest neighbours
             //min and max size in pixels. Start to search with a window of 800 and go down to 100 
-            Rectangle[] rectangles = classifier.DetectMultiScale(grayFrame, 1.4, 0, new Size(15, 15), new Size(800, 800));
+            Rectangle[] rectangles = classifier.DetectMultiScale(grayFrame, 1.2, 0, new Size(32, 32), new Size(800, 800));
 
-            if (!rectangles.Any())
+            if (!rectangles.Any() || rectangles.Length < 2)
             {
-                control_label.Text = "No faces on image";
+                control_label.Text = "Invalid image. Couldn't find any faces";
                 control_label.ForeColor = Color.Red;
                 return false;
             }
+
+
             control_label.Text = "Found " + rectangles.Length.ToString() + " faces on image";
             control_label.ForeColor = Color.Green;
          

@@ -23,6 +23,11 @@
         #div_picture #Label1,#Label2 {
             display: block;
         }
+
+        #description{
+            border: solid black;
+            font-size: 20px;
+        }
     </style>
 
 </head>
@@ -52,6 +57,21 @@
         <asp:Label ID="Label1" runat="server" Text="" ></asp:Label>
 
         <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+        </div>
+
+        <br /><br /><br /><br />
+
+        <div id="description">
+            
+How to use:<br /><br />
+
+1) Upload picture containing face (.jpg and up to 2MB)<br /><br />
+
+2) Click Upload button.<br /><br />
+
+3) The program will detect a face on the image (if any) and based on uniform LBP + PCA features classify you to some of the Croatian politicians. Classification is made in Microsoft Azure Machine Learning Studio.
+        </div>
+
     </form>
 
     </body>

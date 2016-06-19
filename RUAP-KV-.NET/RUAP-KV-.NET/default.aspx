@@ -62,13 +62,14 @@
         <br /><br /><br /><br />
 
         <div id="description">
-            How to use:<br /><br />
+            
+How to use:<br /><br />
 
-            1) Upload picture containg face (.jpg and up to 2MB)<br /><br />
+1) Upload picture containing face (.jpg and up to 2MB)<br /><br />
 
-            2) Click Upload button.<br /><br />
+2) Click Upload button.<br /><br />
 
-            3) Program will detect face on image (if any) and based od uniform LBP + PCA features classify you to some of Croatian politicians. Classification is made in Microsoft Azure Machine Learning Studio.
+3) The program will detect a face on the image (if any) and based on uniform LBP + PCA features classify you to some of the Croatian politicians. Classification is made in Microsoft Azure Machine Learning Studio.
         </div>
 
     </form>
