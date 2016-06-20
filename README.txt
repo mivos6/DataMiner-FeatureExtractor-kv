@@ -10,6 +10,7 @@ Odabrati vrstu generiranih znaèajki.
 
 RUAP-KV-.NET
 ASP.NET web aplikacija putem koje korisnik šalje svoju fotografiju cloud servisu za klasifikaciju.
+Link: http://ruap-kv.azurewebsites.net/
 Postupak:
 Odabrati fotografiju putem forme za odabir datoteke i kliknuti na gumb Upload.
 Na stranici æe se pokazati fotografija politièara u èiju klasu ste klasificirani.
