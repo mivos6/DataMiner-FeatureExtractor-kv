@@ -201,6 +201,8 @@ namespace DataMiner_FeatureExtractor_kv
             Image<Bgr, byte> ImageFrame = new Image<Bgr, byte>(bmp);
             //Convert to gray scale
             Image<Gray, byte> grayFrame = ImageFrame.Convert<Gray, byte>();
+            //Get grayscale bitmap for analysis
+            Bitmap grayImage = grayFrame.Bitmap;
 
             //Classifiers
             CascadeClassifier classifier = new CascadeClassifier(haarPath + "\\haarcascade_frontalface_alt_tree.xml");
@@ -234,12 +236,12 @@ namespace DataMiner_FeatureExtractor_kv
             {
                 List<double> LBP_PCA = new List<double>();
                 //PCA
-                featurePCA = calculatePCA(CutFaceOut(bmp, rectangles[rectangles.Length-1], fileCounter, folderCounter, "0"));
+                featurePCA = calculatePCA(CutFaceOut(grayImage, rectangles[rectangles.Length-1], fileCounter, folderCounter, "0"));
                 LOG("PCA Calculated!", false);
                 featurePCA_toWrite = Array2DTo1D(featurePCA);
 
                 //LBP
-                Bitmap face = CutFaceOut(bmp, rectangles[rectangles.Length-1], fileCounter, folderCounter, "0");
+                Bitmap face = CutFaceOut(grayImage, rectangles[rectangles.Length-1], fileCounter, folderCounter, "0");
                 Bitmap[] segments = makeSegments(face);
 
 
@@ -269,7 +271,7 @@ namespace DataMiner_FeatureExtractor_kv
             else if (radio_LBP.Checked)
             {
 
-                Bitmap face = CutFaceOut(bmp, rectangles[0], fileCounter, folderCounter, "0");
+                Bitmap face = CutFaceOut(grayImage, rectangles[0], fileCounter, folderCounter, "0");
                 Bitmap[] segments = makeSegments(face);
                 for (int i = 0; i < segments.Length; i++)
                 {
