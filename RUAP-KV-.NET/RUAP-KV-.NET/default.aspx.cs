@@ -90,6 +90,9 @@ namespace RUAP_KV_.NET
             Image<Bgr, byte> ImageFrame = new Image<Bgr, byte>(bmp);
             //Convert to gray scale
             Image<Gray, byte> grayFrame = ImageFrame.Convert<Gray, byte>();
+            //Store grayscale image
+            Bitmap grayImage = grayFrame.Bitmap;
+
             //Classifier
             CascadeClassifier classifier = new CascadeClassifier(haarPath);
             //Detect faces. gray scale, windowing scale factor (closer to 1 for better detection),minimum number of nearest neighbours
@@ -115,7 +118,7 @@ namespace RUAP_KV_.NET
             {
                 //Get LBP BUT FIRST CUT FACE OUT AND RESIZE IMG
                 //Calculate features LBP+PCA
-                double[] resultFeatures = calculateFeatureArray(bmp, rectangles);
+                double[] resultFeatures = calculateFeatureArray(grayImage, rectangles);
 
                 //get class for current face
                 CallRequestResponseService.ModelRequest.InvokeRequestResponseService(resultFeatures).Wait();//ERROR
